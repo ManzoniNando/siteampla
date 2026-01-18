@@ -4,217 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem Somos | Ampla Armazenagem</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-        /* --- PADRONIZAÇÃO DO HEADER --- */
-        .page-header {
-            margin-top: 90px;
-            background: linear-gradient(135deg, var(--bg-body) 60%, rgba(26, 160, 187, 0.1) 100%);
-            padding: 50px 0; /* Altura Padronizada */
-            text-align: center;
-        }
-        
-        .page-header h1 { 
-            font-size: 2.2rem; /* Tamanho Padronizado */
-            margin-bottom: 10px; 
-            color: var(--azul-ampla);
-        }
-        
-        .page-header p { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            font-size: 1rem; 
-            color: var(--text-body);
-        }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXK892D5LD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        /* --- ESTILOS ESPECÍFICOS SOBRE --- */
-        .intro-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.05rem;
-            color: var(--text-body);
-            margin-bottom: 40px;
-        }
+  gtag('config', 'G-TXK892D5LD');
+</script>
 
-        .mvv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .mvv-card {
-            background: var(--bg-white);
-            padding: 35px 25px;
-            border-radius: var(--radius-sharp);
-            border: 1px solid var(--border-light);
-            border-top: 4px solid var(--ciano-ampla);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .mvv-card:hover {
-            transform: translateY(-5px);
-            border-top-color: var(--azul-ampla);
-        }
-
-        .mvv-icon {
-            font-size: 2rem;
-            color: var(--azul-ampla);
-            margin-bottom: 15px;
-        }
-
-        .mvv-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--azul-ampla);
-        }
-
-        .mvv-card p { font-size: 0.9rem; line-height: 1.5; }
-
-        .values-text p {
-            margin-bottom: 10px;
-            text-align: left;
-            color: var(--text-body);
-            font-size: 0.9rem;
-        }
-        .values-text strong { color: var(--azul-ampla); }
-
-        .slide-up-card {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .slide-up-card.visible { opacity: 1; transform: translateY(0); }
-
-        .about-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: var(--radius-sharp);
-            margin-bottom: 30px;
-            box-shadow: 15px 15px 0 var(--azul-ampla);
-        }
-    </style>
 </head>
 <body>
 
 <header>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/LOGO512px.png" alt="Logo Ampla Armazenagem">
-            </a>
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <img src="assets/img/LOGO512px.png" alt="Logo Ampla Armazenagem">
+        </a>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="index.html">Serviços</a></li>
+                <li><a href="sobre.html" class="active">Institucional</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</header>
 
-            <nav class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="index.html">Serviços</a></li>
-                    <li><a href="sobre.html">Institucional</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
+<section class="page-header">
+    <div class="container">
+        <h1>Sobre a Ampla</h1>
+        <p>Mais de 5 anos construindo excelência logística na Serra Gaúcha.</p>
+    </div>
+</section>
 
-            <div class="header-actions">
-                <button class="theme-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-                
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<section class="section section-content">
+    <div class="container">
+        <div class="hidden-element">
+            <img src="assets/img/imageminstitucional.png" alt="Galpão Ampla Armazenagem" class="about-image">
+            <div class="intro-text">
+                <h2>Nossa Trajetória</h2>
+                <p>A <strong>Ampla Armazenagem</strong> nasceu em Garibaldi (RS) com um propósito claro: transformar a logística em um diferencial competitivo. Com mais de <strong>5 anos de atuação</strong> e estrutura de<br> <strong>16.000 m²</strong>, atendemos indústrias, e-commerce e varejo com excelência.</p>
+                <br>
+                <p>Atuamos como <strong>Armazém Geral e Operador Logístico Full Service</strong>. Entregamos inteligência fiscal (redução de impostos no Lucro Real) e tecnologia WMS de ponta para precisão absoluta no seu estoque.</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="mvv-grid">
+            <div class="mvv-card slide-up-card">
+                <div class="mvv-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Missão</h3>
+                <p>Oferecer soluções de armazenagem seguras, ágeis e eficientes, garantindo infraestrutura de alto padrão e localização estratégica para impulsionar o crescimento dos clientes.</p>
+            </div>
+            <div class="mvv-card slide-up-card" style="transition-delay: 0.1s;">
+                <div class="mvv-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Visão</h3>
+                <p>Ser referência regional em armazenagem, reconhecida pela inovação, excelência operacional e confiabilidade, ofertando serviços que gerem valor real para indústrias.</p>
+            </div>
+            <div class="mvv-card slide-up-card" style="transition-delay: 0.2s;">
+                <div class="mvv-icon"><i class="fa-solid fa-gem"></i></div>
+                <h3>Nossos Valores</h3>
+                <div class="values-text">
+                    <p><strong>Segurança Inegociável:</strong> Normas rigorosas e proteção total.</p>
+                    <p><strong>Transparência:</strong> Rastreabilidade e clareza em cada etapa.</p>
+                    <p><strong>Eficiência:</strong> Tecnologia para eliminar gargalos.</p>
+                    <p><strong>Parceria Real:</strong> Crescemos com o sucesso do cliente.</p>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Sobre a Ampla</h1>
-            <p>Mais de 5 anos construindo excelência logística na Serra Gaúcha.</p>
+<footer>
+    <div class="container">
+        <div class="mb-10">
+            <img src="assets/img/LOGO512px.png" alt="Logo Ampla Armazenagem">
         </div>
-    </section>
+        <p>Rua Olindo Antonio Bertolini, 108 - Garibaldi, RS</p>
+        <p><strong>(54) 99940-2407</strong> | ampla@amplaarmazenagem.com.br</p>
+        <br>
+        <p style="font-size: 0.8rem;">© 2026 Ampla Armazenagem. Todos os direitos reservados.</p>
+    </div>
+</footer>
 
-    <section class="section" style="padding-top: 30px; padding-bottom: 60px;">
-        <div class="container">
-            
-            <div class="hidden-element">
-                <img src="assets/img/imageminstitucional.png" alt="Galpão Ampla Armazenagem" class="about-image">
-                
-                <div class="intro-text">
-                    <h2 style="margin-bottom: 15px; color: var(--azul-ampla); font-size: 1.8rem;">Nossa Trajetória</h2>
-                    <p>
-                        A <strong>Ampla Armazenagem</strong> nasceu em Garibaldi (RS) com um propósito claro: transformar a logística em um diferencial competitivo. Com mais de <strong>5 anos de atuação</strong> e estrutura de <strong>16.000 m²</strong>, atendemos indústrias, e-commerce e varejo com excelência.
-                    </p>
-                    <br>
-                    <p>
-                        Atuamos como <strong>Armazém Geral e Operador Logístico Full Service</strong>. Entregamos inteligência fiscal (redução de impostos no Lucro Real) e tecnologia WMS de ponta para precisão absoluta no seu estoque.
-                    </p>
-                </div>
-            </div>
+<a href="https://wa.me/5554999402407" class="whatsapp-float" target="_blank" title="Fale no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
-
-            <div class="mvv-grid">
-                <div class="mvv-card slide-up-card" style="transition-delay: 0.1s;">
-                    <div class="mvv-icon"><i class="fa-solid fa-bullseye"></i></div>
-                    <h3>Missão</h3>
-                    <p>Oferecer soluções de armazenagem seguras, ágeis e eficientes, garantindo infraestrutura de alto padrão e localização estratégica para impulsionar o crescimento dos clientes.</p>
-                </div>
-
-                <div class="mvv-card slide-up-card" style="transition-delay: 0.2s;">
-                    <div class="mvv-icon"><i class="fa-solid fa-eye"></i></div>
-                    <h3>Visão</h3>
-                    <p>Ser referência regional em armazenagem, reconhecida pela inovação, excelência operacional e confiabilidade, ofertando serviços que gerem valor real para indústrias.</p>
-                </div>
-
-                <div class="mvv-card slide-up-card" style="transition-delay: 0.3s;">
-                    <div class="mvv-icon"><i class="fa-solid fa-gem"></i></div>
-                    <h3>Nossos Valores</h3>
-                    <div class="values-text" style="width: 100%;">
-                        <p><strong>Segurança Inegociável:</strong> Normas rigorosas e proteção total.</p>
-                        <p><strong>Transparência:</strong> Rastreabilidade e clareza em cada etapa.</p>
-                        <p><strong>Eficiência:</strong> Tecnologia para eliminar gargalos.</p>
-                        <p><strong>Parceria Real:</strong> Crescemos com o sucesso do cliente.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div style="margin-bottom: 20px;">
-                <img src="assets/img/LOGO512px.png" alt="Logo Ampla Armazenagem">
-            </div>
-            <p>Rua Olindo Antonio Bertolini, 108 - Garibaldi, RS</p>
-            <p><strong>(54) 99940-2407</strong> | ampla@amplaarmazenagem.com.br</p>
-            <br>
-            <p style="font-size: 0.8rem;">© 2026 Ampla Armazenagem. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5554999402407" class="whatsapp-float" target="_blank" style="position:fixed; width:60px; height:60px; bottom:40px; right:40px; background-color:#25d366; color:#FFF; border-radius:50px; text-align:center; font-size:30px; box-shadow: 2px 2px 3px #999; z-index:100; display:flex; align-items:center; justify-content:center;">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <script src="assets/js/script.js"></script>
-    <script>
-        const mvvObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
-            });
-        }, { threshold: 0.2 });
-        document.querySelectorAll('.slide-up-card').forEach((el) => mvvObserver.observe(el));
-    </script>
+<script src="assets/js/script.js"></script>
+<script>
+    const mvvObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.slide-up-card').forEach((el) => mvvObserver.observe(el));
+</script>
 </body>
 </html>
