@@ -1,0 +1,296 @@
+/* --- 1. Variáveis e Reset (Tema Claro/Escuro) --- */
+:root {
+    /* Cores Light Mode */
+    --header-height: 3.5rem;
+    --hue: 210; /* Azul base */
+    --first-color: hsl(var(--hue), 90%, 30%); /* #003366 */
+    --first-color-alt: hsl(var(--hue), 90%, 25%);
+    --second-color: #ff6600; /* Laranja */
+    --title-color: hsl(var(--hue), 10%, 15%);
+    --text-color: hsl(var(--hue), 10%, 35%);
+    --body-color: #f9f9f9;
+    --container-color: #ffffff;
+    --border-color: #e1e1e1;
+    --shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --title-color: #f1f3f5;
+    --text-color: #c0c0c0;
+    --body-color: #121212;
+    --container-color: #1e1e1e;
+    --border-color: #333;
+    --shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* --- 2. Header & Nav --- */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--container-color);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.nav-container {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.25rem;
+    color: var(--first-color);
+    letter-spacing: 1px;
+}
+.logo span { color: var(--second-color); }
+
+.nav-list { display: flex; gap: 2rem; }
+.nav-list a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.nav-list a:hover, .nav-list a.active { color: var(--second-color); }
+
+/* Botões do Header */
+.header-actions { display: flex; align-items: center; gap: 1rem; }
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--title-color);
+    display: flex;
+    align-items: center;
+}
+.theme-btn svg { width: 22px; height: 22px; }
+
+.nav-toggle, .nav-close { display: none; } /* Escondido no Desktop */
+
+/* --- 3. Hero Section (Moderno com Gradiente) --- */
+.hero {
+    position: relative;
+    height: 90vh; /* Altura quase total */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: url('../img/hero-bg.jpg') no-repeat center center/cover;
+    /* Caso não tenha imagem ainda, use um gradiente CSS como fallback */
+    background: linear-gradient(135deg, var(--first-color) 0%, #001a33 100%);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* Escurece a imagem */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.highlight { color: var(--second-color); }
+
+.hero-buttons { margin-top: 2rem; display: flex; gap: 1rem; }
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px; /* Arredondado moderno */
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--second-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(255, 102, 0, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+.btn-outline:hover {
+    background: #fff;
+    color: var(--first-color);
+}
+
+/* --- 4. Cards & Seções --- */
+.section { padding: 5rem 0; }
+.section-title { text-align: center; margin-bottom: 3rem; }
+.section-title h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--second-color);
+}
+
+.card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+/* --- 5. Animações de Scroll (Fade In) --- */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show-element {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 6. Whatsapp Widget --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover { transform: scale(1.1); }
+
+/* --- 7. Footer --- */
+footer {
+    background-color: var(--container-color);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+/* --- 8. Responsividade Mobile --- */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: none; /* JS vai tratar disso */
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--container-color);
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        padding: 4rem 2rem;
+        transition: 0.4s;
+        display: block; /* Para permitir a animação */
+    }
+
+    .nav-menu.show-menu { right: 0; }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+    .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--title-color);
+        border-radius: 2px;
+    }
+
+    .nav-close {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--title-color);
+    }
+
+    .hero h1 { font-size: 2rem; }
+    .hero-buttons { flex-direction: column; }
+    .btn { width: 100%; text-align: center; }
+}
