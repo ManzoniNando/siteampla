@@ -74,7 +74,7 @@ header {
     display: flex; justify-content: space-between; align-items: center; width: 100%;
 }
 
-.logo { display: flex; align-items: center; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 10px;}
 .logo svg { height: 45px; width: auto; }
 /* Logo adaptado para fundo azul (linhas brancas) */
 .logo svg path[fill="#353D90"] { fill: #ffffff; } 
