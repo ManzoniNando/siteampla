@@ -1,82 +1,58 @@
-/* --- 1. Menu Mobile (Abrir/Fechar) --- */
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close');
+/* --- Menu Mobile --- */
+const navToggle = document.getElementById('nav-toggle');
+const navList = document.getElementById('nav-list');
 
-if(navToggle) {
+if (navToggle) {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu');
+        navList.classList.toggle('active');
     });
 }
 
-if(navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu');
+// Fechar menu ao clicar em link
+document.querySelectorAll('.nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
     });
-}
-
-// Fechar menu ao clicar em um link (mobile)
-const navLink = document.querySelectorAll('.nav-list a');
-function linkAction() {
-    navMenu.classList.remove('show-menu');
-}
-navLink.forEach(n => n.addEventListener('click', linkAction));
-
-/* --- 2. Dark/Light Mode --- */
-const themeButton = document.getElementById('theme-button');
-const iconSun = document.querySelector('.icon-sun');
-const iconMoon = document.querySelector('.icon-moon');
-const darkTheme = 'dark-mode';
-
-// Verificar se o usuário já escolheu um tema antes
-const selectedTheme = localStorage.getItem('selected-theme');
-
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
-
-// Aplica o tema salvo se existir
-if (selectedTheme) {
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
-    toggleIcons(selectedTheme === 'dark');
-}
-
-// Função para alternar ícones
-function toggleIcons(isDark) {
-    if(isDark) {
-        iconSun.style.display = 'block'; // Mostra Sol
-        iconMoon.style.display = 'none'; // Esconde Lua
-    } else {
-        iconSun.style.display = 'none'; // Esconde Sol
-        iconMoon.style.display = 'block'; // Mostra Lua
-    }
-}
-
-themeButton.addEventListener('click', () => {
-    // Adiciona ou remove a classe dark-mode
-    document.body.classList.toggle(darkTheme);
-    const isDark = document.body.classList.contains(darkTheme);
-    
-    // Troca os ícones
-    toggleIcons(isDark);
-
-    // Salva a escolha no navegador
-    localStorage.setItem('selected-theme', getCurrentTheme());
 });
 
-/* --- 3. Animação ao Scroll (Fade In) --- */
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1 // Dispara quando 10% do elemento estiver visível
-};
+/* --- Dark Mode Toggle --- */
+const themeBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeBtn.querySelector('i');
 
-const observer = new IntersectionObserver((entries, observer) => {
+// Checar preferência salva
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    icon.classList.replace('fa-moon', 'fa-sun');
+}
+
+themeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    
+    // Troca ícone
+    if (isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+/* --- Animação Scroll (Intersection Observer) --- */
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('show-element');
-            observer.unobserve(entry.target); // Para de observar após animar
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
-}, observerOptions);
+});
 
-const hiddenElements = document.querySelectorAll('.hidden-element');
-hiddenElements.forEach((el) => observer.observe(el));
+document.querySelectorAll('.hidden-element').forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+});

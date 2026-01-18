@@ -3,91 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ampla Armazenagem | Soluções Logísticas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Ampla Armazenagem | A Solução para seu Estoque</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <header id="header">
+    <header>
         <div class="container nav-container">
-            <div class="logo">
-                <a href="index.html">AMPLA<span>.</span></a>
-            </div>
-            
-            <nav class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">Serviços</a></li>
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 106 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M53 0 L0 90 L16 90 L53 28 L90 90 L106 90 L53 0 Z" fill="#ffffff"/>
+                    <path d="M53 45 L35 75 L71 75 L71 63 L53 63 L45 75 Z" fill="#1AA0BB"/> 
+                    <path d="M65 63 L90 63 L90 75 L72 75 Z" fill="#ffffff"/>
+                </svg>
+                <div class="logo-text">AMPLA</div>
+            </a>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Serviços</a></li>
                     <li><a href="sobre.html">Institucional</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
-                <div class="nav-close" id="nav-close">&times;</div>
             </nav>
 
-            <div class="header-actions">
-                <button id="theme-button" class="theme-btn" aria-label="Trocar Tema">
-                    <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                </button>
-                
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+            <button class="theme-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content hidden-element">
-            <h1>Logística Inteligente e <span class="highlight">Espaço Seguro</span></h1>
-            <p>A solução definitiva em armazenagem para impulsionar o crescimento da sua empresa.</p>
-            <div class="hero-buttons">
-                <a href="contato.html" class="btn btn-primary">Orçamento Rápido</a>
-                <a href="sobre.html" class="btn btn-outline">Conheça a Ampla</a>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text hidden-element">
+                    <h1>Sua Logística <br><span>Eficiente e Segura</span></h1>
+                    <p>Referência em Armazenagem e Full Fulfillment em Garibaldi (RS). Reduza custos fixos, otimize sua expedição e foque no crescimento do seu negócio.</p>
+                    
+                    <a href="contato.html" class="btn">Solicitar Cotação</a>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <strong>+5</strong>
+                            <span>Anos de Mercado</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>16k</strong>
+                            <span>m² de Estrutura</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>40k</strong>
+                            <span>Volumes/Mês</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-img">
+                    <img src="assets/img/imagembanner.png" alt="Operação Logística Ampla">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="servicos">
         <div class="container">
-            <div class="section-title hidden-element">
-                <h2>Nossos Serviços</h2>
-                <p>Excelência operacional em cada etapa</p>
+            <div class="section-title">
+                <h2>Diferenciais Competitivos</h2>
+                <p>Passe o mouse para descobrir como impulsionamos sua empresa</p>
+                <span></span>
             </div>
 
-            <div class="grid-cards">
-                <article class="card hidden-element">
-                    <div class="card-icon">📦</div>
-                    <h3>Armazenagem</h3>
-                    <p>Controle de estoque rigoroso com segurança 24h e sistemas WMS integrados.</p>
+            <div class="services-grid">
+                <article class="service-card hidden-element">
+                    <div class="card-icon"><i class="fa-solid fa-percent"></i></div>
+                    <h3>Economia Tributária</h3>
+                    <p>Reduza custos com impostos. As despesas de armazenagem são <strong>dedutíveis no Lucro Real</strong>, gerando uma economia de 24% a 34% em IRPJ e CSLL.</p>
                 </article>
-                <article class="card hidden-element" style="transition-delay: 100ms;">
-                    <div class="card-icon">🚚</div>
-                    <h3>Distribuição</h3>
-                    <p>Logística ágil para entregas rápidas e pontuais em todo o território.</p>
+
+                <article class="service-card hidden-element">
+                    <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3>Armazém Geral</h3>
+                    <p>Emissão de Título de Depósito e Warrant. Use seu estoque como <strong>garantia financeira</strong> e realize vendas com faturamento direto sem movimentar a carga.</p>
                 </article>
-                <article class="card hidden-element" style="transition-delay: 200ms;">
-                    <div class="card-icon">🔄</div>
-                    <h3>Cross-Docking</h3>
-                    <p>Reduza custos de estocagem com nossa operação de trânsito rápido.</p>
+
+                <article class="service-card hidden-element">
+                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>WMS Inteligente</h3>
+                    <p>Recebimento via XML, endereçamento automático e geração de pedidos otimizada. Controle total e rastreabilidade da sua carga em tempo real.</p>
                 </article>
+
+                <article class="service-card hidden-element">
+                    <div class="card-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>Full Fulfillment</h3>
+                    <p>Operação completa: recebimento, armazenagem, picking (separação), packing e expedição. Ideal para E-commerce e Indústria.</p>
+                </article>
+
+                <article class="service-card hidden-element">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Segurança Total</h3>
+                    <p>Estrutura monitorada 24h, com seguro completo e 100% adequada às normas PPCI, MAPA e Alvará Sanitário.</p>
+                </article>
+
+                <article class="service-card hidden-element">
+                    <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Localização Premium</h3>
+                    <p>Acesso estratégico na Rota do Sol, Garibaldi/RS. Pátio exclusivo para manobras e agilidade no escoamento logístico.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 30px;">
+                <h2 style="font-size: 1.5rem;">Quem confia na Ampla</h2>
+            </div>
+            <div class="clients-grid hidden-element">
+                <div class="client-logo">TRAMONTINA</div>
+                <div class="client-logo">CASA MADEIRA</div>
+                <div class="client-logo">GARIBALDI</div>
+                <div class="client-logo">JAUENSE</div>
+                <div class="client-logo">TIMAC AGRO</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossa operação.</p>
+            </div>
+
+            <div class="faq-container hidden-element">
+                <details class="faq-item">
+                    <summary>Como funciona a dedução no Lucro Real?</summary>
+                    <p>Ao contratar a Ampla, o custo de armazenagem entra como despesa operacional dedutível. Isso reduz a base de cálculo do IRPJ e CSLL, gerando uma economia tributária efetiva de até 34%.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>A Ampla atende E-commerce?</summary>
+                    <p>Sim! Somos especialistas em picking (separação unitária) e expedição fracionada. Cuidamos de todo o processo para que você foque apenas nas vendas.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Onde fica localizada a estrutura?</summary>
+                    <p>Estamos na Rua Olindo Antônio Bortolini, 108, em Garibaldi (RS). Uma localização estratégica a apenas 400m da RSC 453 e 2km da BR 470, facilitando o transporte.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Posso usar meu estoque como garantia?</summary>
+                    <p>Sim. Como Armazém Geral, emitimos o Warrant, documento legal que permite oferecer a mercadoria armazenada conosco como garantia em operações financeiras.</p>
+                </details>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2024 Ampla Armazenagem. CNPJ: 00.000.000/0001-00</p>
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <svg viewBox="0 0 106 100" width="60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M53 0 L0 90 L16 90 L53 28 L90 90 L106 90 L53 0 Z" fill="#ffffff"/>
+                    <path d="M53 45 L35 75 L71 75 L71 63 L53 63 L45 75 Z" fill="#1AA0BB"/> 
+                </svg>
+            </div>
+            <h3>AMPLA ARMAZENAGEM</h3>
+            <p>Rua Olindo Antonio Bertolini, 108 - Garibaldi, RS</p>
+            <p><strong>(54) 99940-2407</strong> | ampla@amplaarmazenagem.com.br</p>
+            <br>
+            <p style="font-size: 0.8rem;">&copy; 2026 Ampla Armazenagem. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
 
     <script src="assets/js/script.js"></script>
 </body>
