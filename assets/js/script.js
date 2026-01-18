@@ -1,12 +1,19 @@
 /* --- Menu Mobile --- */
 const navToggle = document.getElementById('nav-toggle');
-const navList = document.getElementById('nav-list');
+const navMenu = document.getElementById('nav-menu'); // ID ajustado
 
 if (navToggle) {
     navToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
+        navMenu.classList.toggle('active'); // Alterna a classe que abre o menu
     });
 }
+
+// Fechar menu ao clicar em link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
 
 // Fechar menu ao clicar em link
 document.querySelectorAll('.nav-list a').forEach(link => {

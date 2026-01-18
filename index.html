@@ -14,14 +14,13 @@
 </head>
 <body>
 
-    <header>
+<header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
                 <img src="assets/img/LOGO512px.png" alt="Logo Ampla Armazenagem">
-
             </a>
 
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Serviços</a></li>
                     <li><a href="sobre.html">Institucional</a></li>
@@ -30,7 +29,15 @@
                 </ul>
             </nav>
 
-            <button class="theme-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+            <div class="header-actions">
+                <button class="theme-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -114,17 +121,26 @@
         </div>
     </section>
 
-    <section class="clients-section">
+<section class="clients-section">
         <div class="container">
-            <div class="section-title" style="margin-bottom: 30px;">
-                <h2 style="font-size: 1.5rem;">Quem confia na Ampla</h2>
+            <div class="section-title" style="margin-bottom: 40px;">
+                <h2>Quem confia na Ampla</h2>
             </div>
-            <div class="clients-grid hidden-element">
-                <div class="client-logo"><img src="assets/img/LOGOTRAMONTINA.png"></div>
-                <div class="client-logo"><img src="assets/img/LOGOCASAMADEIRA.png"></div>
-                <div class="client-logo"><img src="assets/img/LOGOJAUENSE.png"></div>
-                <div class="client-logo"><img src="assets/img/LOGOVINGARIBALDI.png"></div>
-                <div class="client-logo"><img src="assets/img/LOGOTIMACAGRO.png"></div>
+            
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide"><img src="assets/img/LOGOTRAMONTINA.png" alt="Tramontina"></div>
+                    <div class="slide"><img src="assets/img/LOGOCASAMADEIRA.png" alt="Casa Madeira"></div>
+                    <div class="slide"><img src="assets/img/LOGOJAUENSE.png" alt="Jauense"></div>
+                    <div class="slide"><img src="assets/img/LOGOVINGARIBALDI.png" alt="Garibaldi"></div>
+                    <div class="slide"><img src="assets/img/LOGOTIMACAGRO.png" alt="Timac Agro"></div>
+
+                    <div class="slide"><img src="assets/img/LOGOTRAMONTINA.png" alt="Tramontina"></div>
+                    <div class="slide"><img src="assets/img/LOGOCASAMADEIRA.png" alt="Casa Madeira"></div>
+                    <div class="slide"><img src="assets/img/LOGOJAUENSE.png" alt="Jauense"></div>
+                    <div class="slide"><img src="assets/img/LOGOVINGARIBALDI.png" alt="Garibaldi"></div>
+                    <div class="slide"><img src="assets/img/LOGOTIMACAGRO.png" alt="Timac Agro"></div>
+                </div>
             </div>
         </div>
     </section>
