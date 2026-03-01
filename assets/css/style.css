@@ -260,6 +260,33 @@ footer p { opacity: 0.8; font-size: 0.9rem; margin-bottom: 5px; }
     text-align: center; font-size: 30px; z-index: 100; display: flex; align-items: center; justify-content: center;
 }
 
+/* --- 12. Seção de Vídeo --- */
+.video-section {
+    padding: 60px 0 80px 0; /* Atualizado: 80px de espaço na parte de baixo */
+    background-color: var(--bg-body);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-sharp);
+    border: 4px solid var(--ciano-ampla);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.video-wrapper iframe, .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 /* --- MOBILE E TABLET (Max 768px) --- */
 @media (max-width: 768px) {
     /* Menu Mobile */
@@ -327,4 +354,13 @@ footer p { opacity: 0.8; font-size: 0.9rem; margin-bottom: 5px; }
     @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-140px * 5)); } }
     
     .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
+    
+    /* Seção de Vídeo Mobile */
+    .video-section {
+        padding: 40px 0 50px 0; /* Atualizado: 50px de espaço na parte de baixo para celular */
+    }
+    .video-wrapper {
+        border-width: 2px;
+        border-radius: 8px; 
+    }
 }
